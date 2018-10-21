@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>File Warp</title>
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/quiet.js"></script>
+    <script type="text/javascript" src="receivetext.js"></script>
+    <script type="text/javascript" src="sendtext.js"></script>
+    <script async type="text/javascript" src="js/quiet-emscripten.js"></script>
+    <script defer src="js/fontawesome-all.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <link href="materialize.min.css" rel="stylesheet" type="text/css"/>
+      <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+
+
+
+  </head>
+  <body>
+
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js');
+      var ip = require('ip');
+      var ss = require('socket.io-stream');
+    </script>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">File Warp</a>
+      <ul id="nav-mobile" class="right">
+        <li>  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">message</i></a>
+      </li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul id="slide-out" class="sidenav sidenav-fixed">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="images/office.jpg">
+      </div>
+      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+      <a href="#name"><span class="white-text name">John Doe</span></a>
+      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Notifications</a></li>
+  <ul class="collection">
+    <li class="collection-item avatar">
+      <img src="images/yuna.jpg" alt="" class="circle">
+      <span class="title">Title</span>
+      <p>First Line <br>
+         Second Line
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons notification-icon">folder</i>
+      <span class="title">Title</span>
+      <p>First Line <br>
+         Second Line
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle green">insert_chart</i>
+      <span class="title">Title</span>
+      <p>First Line <br>
+         Second Line
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle red">play_arrow</i>
+      <span class="title">Title</span>
+      <p>First Line <br>
+         Second Line
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+  </ul>
+  </ul>
+        
+
+  <div class="container">
+
+  <!-- Element Showed -->
+  <div class="fixed-action-btn">
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">menu</i>
+  </a>
+  <ul>
+    <li><div class="form-group" data-quiet-profile-name="ultrasonic-experimental" data-quiet-receive-text>
+          <div class="alert alert-danger hidden" data-quiet-receive-text-warning></div>
+          <pre data-quiet-receive-text-target class="hidden">Your received text will show up here. Waiting...</pre>
+          <button type="button" class="btn-floating btn-large waves-effect waves-light red" data-quiet-receive-text-button><i class="material-icons" data-quiet-receiving-text="leak_add" id="listen">leak_remove</i></button>
+        </div></li>
+    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+  </ul>
+</div>
+<ul id="userlist">
+  <li> 
+    <div class="form-group" data-quiet-profile-name="ultrasonic-experimental" data-quiet-receive-text>
+      <button type="button" class="btn-floating btn-large waves-effect waves-light blue" data-quiet-receive-text-button><i id="broadcast" class="material-icons" data-quiet-receiving-text="speaker_phone">speaker_phone</i></button>
+    </div>
+  </li>
+</ul>
+</div>  
+  </body>
+</html>

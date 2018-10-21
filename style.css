@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(fonts/MaterialIcons-Regular.woff2) format('woff2'),
+    url(fonts/MaterialIcons-Regular.woff) format('woff'),
+    url(fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.fill {
+    position:absolute;
+    bottom:0; left:0;
+    width:100%;
+    background: orange;
+    height: 0%;
+    transition:height 1s;
+    z-index: -1;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+head, body, footer {
+  padding-right: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+  head, body, footer {
+    padding-right: 0;
+  }
+}
+
+.container {
+	margin-top: 50px;
+}
+.droparea:-moz-drag-over {
+  border: 1px solid black;
+}
+
+.dp48 {
+	font-size: 3em;
+}
+
+#userlist {
+  /*background-color: blue;*/
+  /*height: 200px;*/
+  /*width: 200px;*/
+	position: relative;
+	width: 24em;
+	height: 24em;
+	padding: 2.8em; /*= 2em * 1.4 (2em = half the width of an img, 1.4 = sqrt(2))*/
+	border: dashed 1px;
+	border-radius: 50%;
+	margin: 1.75em auto 0;
+
+}
+
+#userlist li {
+	-webkit-transition:all 1s ease-out;
+    -moz-transition:all 1s ease-out;
+    -o-transition:all 1s ease-out;
+    transition:all 1s ease-out;
+}
+#userlist button {
+	display: block;
+/*	overflow: hidden;
+*/	position: absolute;
+	top: 50%; left: 50%;
+	width: 4em; height: 4em;
+	margin: -2em; 
+
+}
+
+#userlist button :hover {
+	/*background-color:red;*/
+	animation: pulse-animation;
+}
+
+
+/* this is for showing the circle on which the images are placed */
+/*#userlist:after {
+	position: absolute;
+	top: 2.8em; left: 2.8em;
+	width: 24em; height: 24em;
+	border: dashed 1px deeppink;
+	border-radius: 50%;
+	opacity: .3;
+	pointer-events: none;
+	content: '';
+}*/
+
+.list-item {
+  list-style: none;
+  /*background-color: red;*/
+  /*height: 50px;*/
+  /*width: 50px;*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
